@@ -1,6 +1,6 @@
-# Coffee And Code Project
+# Coffee And Code Project #
 
-## Labs
+## Labs ##
 Sabemos da grande influência do GitHub na vida dos desenvolvedores hoje em dia, e o ponto-chave é a colaboração. 
 
 No começo, foi pensado um blog para que eu pudesse expor minhas opiniões, ponto de vista sobre recursos/ferramentas/tecnologias e disponibilizar meus experimentos. 
