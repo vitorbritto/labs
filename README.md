@@ -1,4 +1,4 @@
-# Coffee And Code Project #
+# Coffee And Code Project
 
 ## Labs
 Sabemos da grande influência do GitHub na vida dos desenvolvedores hoje em dia, e o ponto-chave é a colaboração. 
