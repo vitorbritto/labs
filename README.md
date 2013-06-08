@@ -1,6 +1,5 @@
 # Coffee And Code Project #
 
-## Labs ##
 Sabemos da grande influência do GitHub na vida dos desenvolvedores hoje em dia, e o ponto-chave é a colaboração. 
 
 No começo, foi pensado um blog para que eu pudesse expor minhas opiniões, ponto de vista sobre recursos/ferramentas/tecnologias e disponibilizar meus experimentos. 
@@ -17,3 +16,6 @@ Então, surge o projeto ***Coffee and Code***. Que vem a ser um espaço aberto a
 
 >Importante: a princípio, este projeto será orientado aos desenvolvedores da comunidade brasileira.
 
+
+## Labs ##
+Este espaço será destinado aos experimentos feitos por mim. Conto com a colaboração dos colegas e amigos para tornamos este local, um meio de pesquisa sólido visando sempre as boas práticas da programação.
