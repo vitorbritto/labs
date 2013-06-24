@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sistema Léxico do JavaScript</title>
+
+	<script type="text/javascript">
+
+		// TAMANHO DE CAIXA
+
+		// O JavaScript é sensível ao tamanho de caixa (case sensitive)
+		var total, TOTAL, ToTaL, tOTAL, toTAL ...
+
+		// Os métodos sempre devem ser escritos com letras minúsculas
+		alert(), write(), writeln(), prompt(), confirm() ...
+
+
+		// COMENTÁRIOS
+
+		// Comentário em linha única
+
+		/*
+
+			Projeto: Nome do Projeto
+			Versão: 1.0.0
+			Autor: Vitor Britto
+			Descrição: Aqui estamos apresentando um comentário com linhas múltiplas
+
+		*/
+
+
+		// DECLARAÇÕES
+
+		// Declaração na mesma linha
+		a = 5; b = 6; alert("Hello world!");
+
+		// Delcaração em linhas separadas
+		a = 5;
+		b = 6;
+		alert("Hello world!");
+
+
+		// ESPAÇOS EM BRANCO E QUEBRAS DE LINHA
+
+		// Sinxtaxes válidas
+		a = 44; e a=44;
+		alert("Olá, tudo bem?"); e alert( "Olá, tudo bem?" );
+		function(){...} e function () {...}
+
+		// Sintaxes com erros
+		a = 4 4; // espaço entre os algarismos de um número
+		document.write("<p> Eu sou
+		uma string</p>"); // quebra de linha de uma string
+
+
+		// LITERAIS
+
+		/*
+
+			1. Inteiros:
+						BASE 10(decimal)    -> Conjunto Z
+						BASE 16(hexadecimal -> 0 a 9 + A a F).
+			   			CSS: #FFCC00 = #ffcc00
+			   			JS:  0xFFCC00 = 0xffcc00
+
+			2. Decimais:
+						a = 3.1416;
+						b = -87.543;
+						c = .3333333;
+
+						>>> Utilizando a notação científica
+						a = 3E5 -> 3x10**5;
+						b = -543.6234652E15;
+
+			3. Booleanos
+						a = true;
+						b = false;
+
+						a = 10;
+						se a < 10 faça isto senão faça aquilo;
+
+			4. Strings
+						nome = "Vitor Britto";
+						outroNome = 'Raimundo Britto';
+						mensagem = "Você está assistindo a aula sobre JavaScript.\n Não deixem de praticar.";
+
+						// Caractere de escape
+						alert("C:\\localhost\labs\javascript\index.html"); // erro
+						alert("C:\\\\localhost\\labs\\javascript\\index.html"); // válido
+						"Experimento com Javascript do Coffee and Code\'s Project"
+						"Vitor Britto disse \"Olá, mundo!\""
+
+			5. Arrays
+						// índice ->    0          1          2        3        4         5          6
+						carros =     ["ford", "chevrolet", "fiat", "toyota", "nissan", "renault", "citroen"];
+
+						// recuperando os valores
+						carro[0]; // contém o valor "ford"
+						carro[5]; // contém o valor "renault"
+
+						// Array aceita strings, inteiros, booleanos, arrays e expressões
+						arrayMix = ["html", 44, "javascript", true, [1,2,5], a+b];
+
+			6. Objetos
+						// OBJETO CARRO
+						Carro =
+						{
+							marca: "Toyota",			//propriedade/valor
+							modelo: "Ethios",			//propriedade/valor
+							ipva: "valor('rb15')",		//propriedade/método
+							dimensoes:
+							{
+								c: "4.250mm",
+								l: "1.735mm",
+								a: "1.525mm"
+							}
+						};
+
+
+						// RECUPERAR DADOS DO OBJETO CARRO
+						marca = Carro.marca;
+						modelo = Carro.modelo;
+						comprimento = Carro.dimensoes.c;
+
+						executar = function() {
+							alert(marca);
+							alert(modelo);
+							alert(comprimento);
+						}
+
+
+						// AGREGA O EVENTO ONCLICK PARA DISPARAR A FUNÇÃO EXECUTAR()
+						<button type="button" onclick="executar()">Mostrar propriedades</button>
+
+
+
+			// Seção CDATA
+			Responsável por validar um bloco de código em DOCTYPES XHTML
+
+
+			// VARIÁVEIS
+
+			As variáveis são conhecidas também como: identificadores.
+
+			Variável para mostrar a quantidade de livros em um acervo.
+
+			qtd_livros = 10;
+			qtdLivros = 10;
+
+
+
+
+
+
+
+		*/
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
