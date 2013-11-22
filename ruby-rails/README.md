@@ -1,1 +1,0 @@
-# Experimentos com Ruby (Rails)

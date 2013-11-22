@@ -1,11 +1,10 @@
-# Índice Geral
+# My Labs
 
-* [CSS](css/)
+A simple repository for my experiments and tests.
+
+## Summary
+
+* [C/C++](c/)
+* [PHP](php/)
 * [JavaScript](javascript/)
-* [PHP (MySQL)](php-mysql/)
-* [Ruby (Rails)](ruby-rails/)
-
-## MyLabs ##
-Espaço destinado aos meus experimentos. =]
-
-***Confira também, o repositório [Dev List](https://github.com/vitorbritto/dev-list)***
+* [Ruby/Rails](ruby/)
