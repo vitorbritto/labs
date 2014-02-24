@@ -1,0 +1,11 @@
+-------------------------------------------------------------
+Tarefas Disponíveis:
+    make        -> Tarefa padrão (all + copy + zip)
+    make all    -> Inicializa processo de Build
+    make create -> Criar a estrutura do projeto
+    make copy   -> Copia os arquivos para a pasta "public"
+    make zip    -> Comprime os arquivos da pasta "public"
+                   e versiona com a data e hora atual
+
+Uso: make [nome da tarefa que deseja executar]
+-------------------------------------------------------------
