@@ -1,10 +1,12 @@
-# My Labs
+![Labs Logo](logo-labs.jpg "Labs")
 
-A simple repository for my experiments and tests.
+A simple repository to store the codes from my articles, some experiments and other stuff
 
 ## Summary
 
 * [C/C++](c/)
-* [PHP](php/)
+* [Erlang](erlang/)
+* [Go](go/)
 * [JavaScript](javascript/)
 * [Ruby/Rails](ruby/)
+* [Shell Script](shell/)
