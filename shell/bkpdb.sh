@@ -33,7 +33,7 @@
 
 # Globais
 NOW="$(date +'%d_%m_%Y_%H_%M_%S')"
-USER="vitorbritto"
+USER="usuario_do_sistema"
 FILE="db_backup_$NOW".gz
 FOLDER="diretorio_para_backup"
 FULL_PATH="$FOLDER/$FILE"
