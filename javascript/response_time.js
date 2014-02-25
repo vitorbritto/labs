@@ -6,10 +6,10 @@ for (var i = 0; i < urls.length; i++) {
 }
  
 function ping(url) {
-    var start = new Date();
- 
+    console.time('Response Time: ');
+    
     http.get({host: url}, function(res){
         console.log("URL: " + url);
-        console.log("Response Time: " + (new Date() - start) + " ms");
+        console.timeEnd('Response Time: ');
     });
 }
