@@ -7,7 +7,7 @@
 #
 # Descrição:
 # Este script será responsável pelo backup de qualquer banco de dados do tipo
-# MySQL em servidor local. Os arquivos serão gravados no diretório "BKP_FOLDER".
+# MySQL em servidor local. Os arquivos serão gravados no diretório "FOLDER".
 #
 # ---------------------------------------------------------------------------------------------
 #
