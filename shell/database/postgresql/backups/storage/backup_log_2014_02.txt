@@ -1,0 +1,7 @@
+----------------------------------------------------------
+ Backup iniciado em: 26-02-2014 02:53:15
+ Backup finalizado em: 26-02-2014 02:53:22
+ Permisso modificada
+ Arquivos remanescentes apagados
+ Operação finalizada em: 26-02-2014 02:53:22
+----------------------------------------------------------
