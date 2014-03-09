@@ -1,0 +1,45 @@
+/////////////////////////////////
+//
+// Utilizando com o Sass
+//
+////////////////////////////////
+
+@mixin calc($propriedade, $expressao) { 
+    #{$propriedade}: -moz-calc(#{$expressao}); 
+    #{$propriedade}: -o-calc(#{$expressao}); 
+    #{$propriedade}: -webkit-calc(#{$expressao}); 
+    #{$propriedade}: calc(#{$expressao}); 
+} 
+
+.minha-classe {
+    @include calc(width, "100% - 100px");
+} 
+
+// Renderiza assim:
+.minha-classe {
+    width: -moz-calc(100% - 100px);
+    width: -o-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
+}
+
+
+
+
+/////////////////////////////////
+//
+// Utilizando com o Compass
+//
+////////////////////////////////
+
+@import "compass/css3/shared";
+
+// http://compass-style.org/reference/compass/support/
+$experimental-support-for-opera: true;
+
+.minha-classe {
+  @include experimental-value(width, calc(100% - 100px));
+}
+
+
+// Suporte para o calc(): http://caniuse.com/calc
