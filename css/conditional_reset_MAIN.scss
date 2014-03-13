@@ -1,0 +1,22 @@
+$use-reset: "normalize" // values: meyer, normalize or custom
+ 
+@if $use-reset == "meyer" {
+ 
+    // CSS Reset - Eric Meyer
+    @include meyer-reset;
+ 
+}
+ 
+@if $use-reset == "normalize" {
+ 
+    // CSS Reset - Normalize
+    @include normalize-reset;
+ 
+}
+ 
+@if $use-reset == "custom" {
+ 
+    // CSS Reset - Custom
+    @include custom-reset;
+ 
+}
