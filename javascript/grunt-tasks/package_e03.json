@@ -1,17 +1,17 @@
 {
   "name": "grunt-test",
   "title": "Grunt test",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
-  "homepage": "http://www.projecturl.com",
-  "main": "index.html",
+  "homepage": "",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.2",
     "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-compass": "~0.6.0",
     "grunt-contrib-watch": "~0.4.4",
