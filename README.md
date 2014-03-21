@@ -6,5 +6,5 @@
 * [Erlang](erlang/)
 * [Go](go/)
 * [JavaScript](javascript/)
-* [Ruby/Rails](ruby/)
+* [Ruby](ruby/)
 * [Shell Script](shell/)
