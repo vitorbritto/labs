@@ -42,6 +42,6 @@ Person.prototype.info = function(name, age, place) {
 
 var person = new Person();
 
-person.info('Vito Britto', 33, 'Brazil');
+person.info('Vitor Britto', 33, 'Brazil');
 person.info('Douglas Crockford', 73, 'USA');
 person.info('Brendan Eich', 53, 'USA');
