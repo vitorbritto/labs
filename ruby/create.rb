@@ -14,10 +14,12 @@
 
 # Requisições
 require 'fileutils'
+require 'webrick'
 
 # Variáveis
 APP_NAME   = ARGV.first
 NO_TOOLS   = ARGV.any? { |arg| arg == '--no-tools' }
+WEB_SERVER = ARGV.any? { |arg| arg == '--server' }
 APP_PATHS  = "assets/scripts assets/styles assets/images assets/fonts"
 APP_FILES  = "index.html robots.txt humans.txt .travis.yml .editorconfig assets/styles/style.css assets/scripts/main.js"
 
@@ -30,6 +32,7 @@ Usage:
 
 Options:
 
+    [--server]         # Starts a Web Server after Scaffolding
     [--no-tools]       # Do not integrate Git, Grunt and Bower
 
 
@@ -46,8 +49,11 @@ def sep; "-------------------------------------------"; end
 def heading(text); puts "\n" + sep + "\n" + text + "\n" + sep + "\n"; end
 
 # Verifica dependências no sistema
-heading("Searching for Git in your system before continue")
-raise "ERROR: Git does not appear to be installed with your $PATH. See http://git-scm.com/download" unless system('which -s git')
+heading("Searching for dependencies in your system before continue")
+raise "ERROR: Git does not appear to be installed with your $PATH. See http://git-scm.com" unless system('command -v git')
+raise "ERROR: Node does not appear to be installed with your $PATH. See http://nodejs.org" unless system('command -v node')
+raise "ERROR: Bower does not appear to be installed with your $PATH. See http://bower.io" unless system('command -v bower')
+raise "ERROR: Grunt does not appear to be installed with your $PATH. See http://gruntjs.com" unless system('command -v grunt')
 puts "All Done!"
 
 # Inicia Scaffolding do Projeto
@@ -68,6 +74,18 @@ FileUtils.cd(APP_NAME, :verbose => true) do
         exe("git init")
         exe("npm init")
         exe("bower init")
+        exe("npm install grunt")
     end
 
+    # Inicia Web Server
+    # if WEB_SERVER
+    #     heading("Starting Web Server")
+    #     server = WEBrick::HTTPServer.new(
+    #         :Port => 8080,
+    #         :BindAddress => "localhost",
+    #         :DocumentRoot => ARGV[0]
+    #     )
+    #     trap("INT") { server.shutdown }
+    #     server.start
+    # end
 end
