@@ -4,7 +4,7 @@
 
 * [C/C++](c/)
 * [Erlang](erlang/)
-* [Go](go/)
+* [PHP](php/)
 * [JavaScript](javascript/)
 * [Ruby](ruby/)
 * [Shell Script](shell/)
