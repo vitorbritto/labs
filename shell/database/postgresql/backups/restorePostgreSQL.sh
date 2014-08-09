@@ -44,6 +44,7 @@ echo "IMPORTANTE:"
 echo "Certifique-se de digitar o nome para o banco de dados corretamente"
 echo "e de realizar as configuraç necessrias antes de realizar este procedimento."
 echo "-------------------------------------------------------------------------------"
+
 echo " "
 echo -n " Digite o nome do banco de dados que voê deseja importar o backup (sem espaços): "; read DB_NAME
 echo " "
@@ -52,11 +53,10 @@ echo -n " Digite o nome nome do arquivo que contém o backup do banco de dados (
 echo "----------------------------------------------------------" >> "$LOG"
 echo " Descompactando .gz: $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOG"
 gunzip "$FOLDER/$FILE".gz
-
-echo "----------------------------------------------------------" >> "$LOG"
 echo " Importação do banco de dados iniciado em: $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOG"
 psql -U "$DB_USER" -h "$DB_HOST" -f "$FOLDER/$FILE" "$DB_NAME"
-
 echo " Importação finalizado em: $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOG"
+echo "----------------------------------------------------------" >> "$LOG"
+
 echo " Restore realizado com sucesso!"
 exit 0

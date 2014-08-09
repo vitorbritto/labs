@@ -50,18 +50,18 @@ echo "IMPORTANTE:"
 echo "Certifique-se de digitar o nome para o banco de dados corretamente"
 echo "e de realizar as configurações necessrias antes de realizar este procedimento."
 echo "-------------------------------------------------------------------------------"
+
 echo " "
 echo -n " Digite o nome do banco de dados que deseja realizar o backup (sem espaços): "; read DB_NAME
 
 echo "----------------------------------------------------------" >> "$LOG"
 echo " Backup iniciado em: $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOG"
 pg_dump -v -O -E UTF8 -Fp -W -h "$DB_HOST" -U "$DB_USER" "$DB_NAME" | gzip > "$FULL_PATH"
-
 echo " Backup finalizado em: $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOG"
 chown "$USER" "$FULL_PATH"
 chown "$USER" "$LOG"
 echo " "
-echo " Permisso modificada" >> "$LOG"
+echo " Permissão modificada" >> "$LOG"
 find "$FOLDER" -name db_backup_* -mtime +8 -exec rm {} \;
 echo " "
 echo " Arquivos remanescentes apagados" >> "$LOG"

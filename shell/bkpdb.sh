@@ -52,6 +52,7 @@ echo "IMPORTANTE:"
 echo "Certifique-se de digitar o nome para o banco de dados corretamente"
 echo "e de realizar as configurações necessárias antes de realizar este procedimento."
 echo "-------------------------------------------------------------------------------"
+
 echo " "
 echo -n "→ Digite o nome do banco de dados que deseja realizar o backup (sem espaços): "; read DB_NAME
 
