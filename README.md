@@ -2,14 +2,14 @@
 
 ## Summary
 
-* [C/C++](c/)
-* [Erlang](erlang/)
-* [Go](go/)
-* [PHP](php/)
-* [JavaScript](javascript/)
-* [Ruby](ruby/)
-* [Shell Script](shell/)
-* [CSS](css/)
+- [CSS](css/)
+- [JavaScript](javascript/)
+- [Ruby](ruby/)
+- [Shell Script](shell/)
+- [C/C++](c/)
+- [Erlang](erlang/)
+- [Go](go/)
+- [Haskell](haskell/)
 
 ## License
 
