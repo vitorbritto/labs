@@ -1,5 +1,29 @@
 'use strict';
 
+// ------------------------------------------------------
+// TABLE OF CONTENTS
+// ------------------------------------------------------
+// 1 - GENERAL NOTES
+// 2 - STEP BY STEP
+// 3 - GENERAL GUIDE
+// 4 - COMMON PROBLEMS
+// ------------------------------------------------------
+
+
+// ------------------------------------------------------
+// GENERAL NOTES
+// ------------------------------------------------------
+
+
+// ------------------------------------------------------
+// STEP BY STEP
+// ------------------------------------------------------
+
+
+// ------------------------------------------------------
+// GENERAL GUIDE
+// ------------------------------------------------------
+
 // Literal Objects
 // --------------------------------
 
@@ -29,33 +53,33 @@ console.log(c);
 
 // Objects
 var animal = {
-    respirar: function() {
-        return console.log('respirando!');
+    breathe: function() {
+        return console.log('breathing!');
     },
-    andar: function() {
-        return console.log('andando!');
+    walk: function() {
+        return console.log('walking!');
     },
-    correr: function() {
-        return console.log('correndo!');
+    run: function() {
+        return console.log('running!');
     },
-    dormir: function() {
-        return console.log('dormindo!');
+    sleep: function() {
+        return console.log('slepping!');
     },
-    acordar: function() {
-        return console.log('acordando!');
+    wakeup: function() {
+        return console.log('waking!');
     }
 };
 
-var cachorro = Object.create(animal, {
-    latir: {
+var dog = Object.create(animal, {
+    bark: {
         value: function() {
             return console.log('au au!!!');
         }
     }
 });
 
-var gato = Object.create(animal, {
-    miar: {
+var cat = Object.create(animal, {
+    meow: {
         value: function() {
             return console.log('meow!!!');
         }
@@ -63,9 +87,9 @@ var gato = Object.create(animal, {
 });
 
 // Properties
-Object.defineProperty(cachorro, 'morder', {
+Object.defineProperty(dog, 'bite', {
     value: function() {
-        return console.log('mordendo!!!');
+        return console.log('biting!!!');
     },
     writable: false,
     enumerable: false,
@@ -73,32 +97,32 @@ Object.defineProperty(cachorro, 'morder', {
 
 });
 
-Object.defineProperty(gato, 'arranhar', {
+Object.defineProperty(cat, 'scratch', {
     value: function() {
-        return console.log('arranhando!!!');
+        return console.log('scrathing!!!');
     }
 });
 
-Object.defineProperty(Object.getPrototypeOf(cachorro), 'comer', {
+Object.defineProperty(Object.getPrototypeOf(dog), 'eat', {
     value: function() {
-        return console.log('comendo!!!');
+        return console.log('eating!!!');
     }
 });
 
-cachorro.respirar();
-cachorro.latir();
-cachorro.morder();
+dog.breathe();
+dog.bark();
+dog.bite();
 
-gato.acordar();
-gato.miar();
-gato.arranhar();
+cat.wakeup();
+cat.meow();
+cat.scratch();
 
 
 // Others
-var carro = carro || {};
+var car = car || {};
 
-carro.modelo = 'Ethios';
-carro.marca = 'Toyota';
-carro.hasOwnProperty('modelo');
+car.model = 'Ethios';
+car.fabric = 'Toyota';
+car.hasOwnProperty('model');
 
-console.log(carro);
+console.log(car);

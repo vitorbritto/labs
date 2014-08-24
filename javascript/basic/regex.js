@@ -1,4 +1,30 @@
-'use strict',
+'use strict';
+
+// ------------------------------------------------------
+// TABLE OF CONTENTS
+// ------------------------------------------------------
+// 1 - GENERAL NOTES
+// 2 - STEP BY STEP
+// 3 - GENERAL GUIDE
+// 4 - COMMON PROBLEMS
+// ------------------------------------------------------
+
+
+// ------------------------------------------------------
+// GENERAL NOTES
+// ------------------------------------------------------
+
+
+
+// ------------------------------------------------------
+// BABY STEP
+// ------------------------------------------------------
+
+
+
+// ------------------------------------------------------
+// GENERAL GUIDE
+// ------------------------------------------------------
 
     // \s+ - A single whitespace character or more
 var txt1 = 'Lorem ipsum dolor sit amet, consectetuer adipiscing      elit.',
@@ -73,6 +99,10 @@ var txt1 = 'Lorem ipsum dolor sit amet, consectetuer adipiscing      elit.',
     rgx18 = /\W/; // '%'
 
 
+// ------------------------------------------------------
+// COMMON PROBLEMS
+// ------------------------------------------------------
+
 // CREATING REGEXES
 // ---------------------------
 
@@ -107,8 +137,4 @@ for (var i = 0; i < cbString.length; i++) {
 
 var txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
     test = /dolor/,
-    match,
-    str;
-
-
-
+    match, str;

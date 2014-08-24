@@ -1,5 +1,95 @@
 'use strict';
 
+// ------------------------------------------------------
+// TABLE OF CONTENTS
+// ------------------------------------------------------
+// 1 - GENERAL NOTES
+// 2 - STEP BY STEP
+// 3 - GENERAL GUIDE
+// 4 - COMMON PROBLEMS
+// ------------------------------------------------------
+
+
+// ------------------------------------------------------
+// GENERAL NOTES
+// ------------------------------------------------------
+
+
+// ------------------------------------------------------
+// STEP BY STEP
+// ------------------------------------------------------
+
+
+// ------------------------------------------------------
+// GENERAL GUIDE
+// ------------------------------------------------------
+
+// Method - Reverse
+var fruits = [
+    'apple',
+    'mangoo',
+    'orange',
+    'grape'
+].reverse();
+
+console.log(fruits);
+
+// Method - Join
+var message = function message(name, module) {
+    var str = [
+        '✖ This task requires ' + name + ' to be installed globally.',
+        'Install: <sudo> npm install ' + module + ' -g',
+        '✖ Aborting...'
+    ].join('\n');
+
+    return str;
+};
+
+console.log(message('Bar Baz', 'barbaz'));
+
+// Method - Sort/Alpha
+var arrSort = ['foo', 'bar', 'baz'];
+console.log(arrSort.sort());
+
+// Method - Sort/Numerical
+var sortNums = function(a,b) {
+    return a - b;
+};
+
+var arrNums = [13, 5, 23, 65, 19];
+console.log(arrNums.sort(sortNums));
+
+// Method - Slice
+// Use slice to convert the function arguments property into a proper array:
+
+var args = Array.prototype.slice.call(arguments);
+
+// Method - Splice
+var tools2 = [
+    'harpjs',
+    'grunt',
+    'angular',
+    'nodejs',
+    'gulp',
+    'npm',
+    'backbone',
+    'nodejs'
+];
+
+// Method - indexOf and lastIndexOf
+var del = tools2.indexOf('nodejs');
+console.log(tools2.splice(del, 1));
+
+// replace element in array
+var rep = tools2.lastIndexOf('nodejs');
+console.log(tools2.splice(rep, 1, 'browserify'));
+
+
+// ------------------------------------------------------
+// COMMON PROBLEMS
+// ------------------------------------------------------
+
+
 // CREATING ARRAYS
 // ------------------------------------------------------
 
@@ -197,75 +287,24 @@ console.log(hasElement.every(txt));
 // Using some method
 var someElement = ['coffee', 'and', 'code'];
 
+var txt = function(elm, idx, arr) {
+    var exp = /^[a-zA-Z]+$/;
+    return exp.test(elm);
+};
 
+console.log(someElement.some(txt));
 
-//
-// METHODS
+// STORE FORM ELEMENT NAMES AND VALUES
 // ------------------------------------------------------
 
-// Reverse
-var fruits = [
-    'apple',
-    'mangoo',
-    'orange',
-    'grape'
-].reverse();
+var arr  = arr || {},
+    elem = document.forms[0].elements[0],
+    str  = '';
 
-console.log(fruits);
+arr[elem.id] = elem.value;
 
-// Join
-var message = function message(name, module) {
-    var str = [
-        '✖ This task requires ' + name + ' to be installed globally.',
-        'Install: <sudo> npm install ' + module + ' -g',
-        '✖ Aborting...'
-    ].join('\n');
-
-    return str;
-};
-
-console.log(message('Bar Baz', 'barbaz'));
-
-// Sort - Alpha
-var arrSort = ['foo', 'bar', 'baz'];
-console.log(arrSort.sort());
-
-// Sort - Numerical
-var sortNums = function(a,b) {
-    return a - b;
-};
-
-var arrNums = [13, 5, 23, 65, 19];
-console.log(arrNums.sort(sortNums));
-
-// Slice
-// Use slice to convert the function arguments property into a proper array:
-
-var args = Array.prototype.slice.call(arguments);
-
-// Splice
-var tools2 = [
-    'harpjs',
-    'grunt',
-    'angular',
-    'nodejs',
-    'gulp',
-    'npm',
-    'backbone',
-    'nodejs'
-];
-
-// remove element from array
-var del = tools2.indexOf('nodejs');
-console.log(tools2.splice(del, 1));
-
-// replace element in array
-var rep = tools2.lastIndexOf('nodejs');
-console.log(tools2.splice(rep, 1, 'browserify'));
-
-
-
-
-
-
-
+for (var key in arr) {
+    if (arr.hasOwnProperty(key)) {
+        str += key + ',' + arr.key + ' ';
+    }
+}
