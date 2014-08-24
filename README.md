@@ -2,6 +2,7 @@
 
 ## Summary
 
+- [HTML](html/)
 - [CSS](css/)
 - [JavaScript](javascript/)
 - [Ruby](ruby/)
