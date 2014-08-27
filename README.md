@@ -2,8 +2,8 @@
 
 ## Summary
 
-- [HTML](html/)
-- [CSS](css/)
+- [HTML](html/) - _Experiments will be focused in HTML5 APIs._
+- [CSS](css/) - _Experiments will be focused in CSS3 Animations._
 - [JavaScript](javascript/)
 - [Ruby](ruby/)
 - [Shell Script](shell/)
