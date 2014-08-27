@@ -164,7 +164,7 @@ mainFn(function(arg1,arg2) { console.log(arg1 + ' ' + arg2); }, 'Welcome,', 'Vit
 // By doing that, we can provide a namespace and define which
 // functions we want to return.
 
-;(function( window, document, undefined ) {
+;(function($, window, document, undefined) {
 
   'use strict';
 
@@ -196,7 +196,7 @@ mainFn(function(arg1,arg2) { console.log(arg1 + ' ' + arg2); }, 'Welcome,', 'Vit
   // Global
   window.APP = APP;
 
-})(window, document);
+})(jQuery, window, document);
 
 
 // ------------------------------------------------------
