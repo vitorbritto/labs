@@ -14,10 +14,102 @@
 // GENERAL NOTES
 // ------------------------------------------------------
 
+// Everything in JavaScript it's an object, except
+// by 'null' and 'undefined'. Don't forget that!
+
+// Objects are a sweet way to encapsulate and ensure the reuse
+// of your code along a web application.
+
+// JavaScript is not based on classes and instances, is based
+// on prototypal inheritance. That means you can create new
+// instances of existing objects, rather then instances of classes.
+
+// This extensibility happens by enhancing an existing objet with
+// new properties and methods.
 
 // ------------------------------------------------------
 // STEP BY STEP
 // ------------------------------------------------------
+
+// OBJECT
+// ------------------------------------------------------
+
+// First, let's create an object.
+
+// CREATING OBJECTS
+
+// Using the literal way
+var obj = {};
+
+// Or the constructor way
+function Obj() {}
+var obj = new Obj();
+console.log(obj);
+
+// The new object inherits from Object.prototype and doesn't have
+// own properties defined.
+
+// We create a new empty object
+var emptyObject = {};
+
+// Also, we create a new object with 'bar' property and value 'baz'
+var foo = {
+    bar: 'baz'
+};
+
+// ACCESSING PROPERTIES
+
+// So, how can we ACCESS their properties?
+// We can access in two ways, with dot notation or square bracket notation
+
+foo.bar; // 'baz'
+foo['bar']; // 'baz'
+
+// The notations work almost identically, with the only difference being
+// that the square bracket notation allows for dynamic setting of properties
+// and the use of property names that would otherwise lead to a syntax error.
+
+// DELETING PROPERTIES
+
+// The right way to remove a property from an object is using the "delete" operator.
+// If you set a property to "undefined" or "null", it'll only be removed the value
+// associated to this property, but not the key.
+
+var obj = {
+    bar: 1,
+    foo: 2,
+    baz: 3
+};
+
+obj.bar = undefined;
+obj.foo = null;
+delete obj.baz;
+
+for(var i in obj) {
+    if (obj.hasOwnProperty(i)) {
+        console.log(i, '' + obj[i]);
+    }
+}
+
+// Return:
+// "bar" "undefined"
+// "foo" "null"
+// baz was successfully removed
+
+// PROTOTYPE
+// ------------------------------------------------------
+
+// JavaScript does not have the classical inheritance model,
+// it uses a prototypal model.
+
+function Foo() {}
+Foo.prototype.bar = 'Hello World';
+Foo.prototype.baz = function() {
+    // code goes here
+};
+var test = new Foo();
+
+console.log(test);
 
 
 // ------------------------------------------------------
@@ -126,3 +218,8 @@ car.fabric = 'Toyota';
 car.hasOwnProperty('model');
 
 console.log(car);
+
+
+// ------------------------------------------------------
+// COMMON PROBLEMS
+// ------------------------------------------------------
