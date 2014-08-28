@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[WIP!] HTML5 API - Drag and Drop</title>
+    <style>
+        #drop {
+            width: 300px;
+            height: 200px;
+            background-color: #ff0000;
+            padding: 5px;
+            border: 2px solid #000000;
+        }
+        #item {
+            width: 100px;
+            height: 100px;
+            background-color: #ffff00;
+            padding: 5px;
+            margin: 20px;
+            border: 1px dashed #000000;
+        }
+        *[draggable=true] {
+            -moz-user-select: none;
+            -khtml-user-drag: element;
+            cursor: move;
+        }
+        *:-khtml-drag {
+            background-color: rgba(238,238,238, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>[WIP!] HTML5 API - Drag and Drop</h1>
+
+    <p>Drag the small yellow box with the dash border to the larger red box with the solid border</p>
+    <div id="item" draggable="true"></div>
+    <div id="drop"></div>
+
+    <script>
+
+        // Cross Browser Functions
+        // -----------------------------------------------------
+        var crossAddEvent = function(target, type, handler) {
+
+            if (target.addEventListener) {
+                target.addEventListener(type, handler, false);
+            } else if (target.attachEvent) {
+                type = 'on' + type;
+                target.attachEvent(type, handler);
+            } else {
+                target['on' + type] = handler;
+            }
+
+        };
+
+        var stopPrev = function(evt) {
+
+            if (evt.preventDefault) {
+                evt.preventDefault();
+            } else {
+                evt.returnValue = false;
+            }
+
+        };
+
+        var stopProp = function(evt) {
+
+            if (evt.stopPropagation) {
+                evt.stopPropagation();
+            } else {
+                evt.cancelBubble = true;
+            }
+
+        };
+
+        // Drag and Drop
+        // -----------------------------------------------------
+
+        var dragOver = function(evt) {
+
+            if (evt.preventDefault) {
+                evt.preventDefault();
+            }
+
+            evt.dataTransfer.dropEffect = 'copy';
+
+            return false;
+
+        };
+
+        var dragStart = function(evt, item, id) {
+
+            evt.dataTransfer.effectAllowed = 'copy';
+            evt.dataTransfer.setData('Text', item.id);
+
+        };
+
+        var dropElement = function(evt, target, id) {
+
+            evt.dataTransfer.dropEffect = 'copy';
+            target.appendChild(document.getElementById(id));
+
+            stopProp(evt);
+
+        };
+
+        var APP = function() {
+
+            var evt    = evt || window.event,
+                id     = evt.dataTransfer.getData('Text'),
+                target = document.getElementById('drop'),
+                item   = document.getElementById("item");
+
+            item.setAttribute("draggable", "true");
+
+            crossAddEvent(target, 'dragenter', stopPrev);
+            crossAddEvent(target, 'dragover', dragOver);
+            crossAddEvent(target, 'drop', dropElement);
+            crossAddEvent(target, 'dragstart', dragStart);
+
+        };
+
+        // Initialize
+        crossAddEvent(document, 'load', APP);
+
+
+    </script>
+
+</body>
+</html>
