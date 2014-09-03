@@ -123,8 +123,62 @@ console.log(str);
 // ------------------------------------------------------
 
 // THROW
+throw 'Error';
+throw 44;
 
-// TRY...CATCH
+// TRY..CATCH
+function getMonthName (mo) {
+    mo=mo-1; // Adjust month number for array index (1=Jan, 12=Dec)
+    var months=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul",
+          "Aug","Sep","Oct","Nov","Dec");
+    if (months[mo] != null) {
+       return months[mo]
+    } else {
+       throw "InvalidMonthNo"          //throw keyword is used here
+    }
+}
+
+try { // statements to try
+    monthName=getMonthName(myMonth) // function could throw exception
+}
+catch (e) {
+    monthName="unknown"
+    logMyErrors(e) // pass exception object to error handler
+}
+
+
+// TRY...CATCH...FINALLY
+openMyFile();
+try {
+    writeMyFile(theData); //This may throw a error
+}catch(e){
+    handleError(e); // If we got a error we handle it
+}finally {
+    closeMyFile(); // always close the resource
+}
+
+
+// NESTED TRY...CATCH...FINALLY
+function fn() {
+
+    try {
+        console.log(0);
+        throw 'boing';
+    } catch(e) {
+        console.log(1);
+        return true;
+        console.log(2);
+    } finally {
+        console.log(3);
+        return false;
+        console.log(4);
+    }
+
+    console.log(5);
+}
+
+fn(); // alerts 0, 1, 3; returns false
+
 
 
 
