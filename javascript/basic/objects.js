@@ -37,6 +37,7 @@
 // First, let's create an object.
 
 // CREATING OBJECTS
+// ------------------------------------------------------
 
 // Using the literal way
 var obj = {};
@@ -58,6 +59,7 @@ var foo = {
 };
 
 // ACCESSING PROPERTIES
+// ------------------------------------------------------
 
 // So, how can we ACCESS their properties?
 // We can access in two ways, with dot notation or square bracket notation
@@ -70,6 +72,7 @@ foo['bar']; // 'baz'
 // and the use of property names that would otherwise lead to a syntax error.
 
 // DELETING PROPERTIES
+// ------------------------------------------------------
 
 // The right way to remove a property from an object is using the "delete" operator.
 // If you set a property to "undefined" or "null", it'll only be removed the value
@@ -105,11 +108,12 @@ for(var i in obj) {
 function Foo() {}
 Foo.prototype.bar = 'Hello World';
 Foo.prototype.baz = function() {
-    // code goes here
+    return this.bar + '!!';
 };
 var test = new Foo();
 
 console.log(test);
+console.log(test.baz());
 
 
 // ------------------------------------------------------
@@ -117,7 +121,7 @@ console.log(test);
 // ------------------------------------------------------
 
 // Literal Objects
-// --------------------------------
+// ------------------------------------------------------
 
 var showDate = function(num) {
     return new Date(num, 0, 1);
@@ -141,7 +145,7 @@ console.log(c);
 
 
 // ES5 - Objects
-// --------------------------------
+// ------------------------------------------------------
 
 // Objects
 var animal = {
@@ -223,3 +227,288 @@ console.log(car);
 // ------------------------------------------------------
 // COMMON PROBLEMS
 // ------------------------------------------------------
+
+
+// CREATE AN OBJECT AND EXTENDS IT
+// ------------------------------------------------------
+
+// First, we create the object using a constructor function
+function Playlist(artistName, titleName) {
+    var title  = titleName,
+        artist = artistName;
+    this.show = function() {
+        return console.log('Now playing: ' + artist + ' - ' + title);
+    };
+}
+
+// We extend the object with prototype property for the band/artist genre
+// Note: We are creating a new method for the "Playlist" object
+Playlist.prototype.genre = function(genreName) {
+    this.genre = genreName;
+};
+
+// We extend the object with prototype property again. Now for the track number
+// Note: We are creating another method for the "Playlist" object
+Playlist.prototype.track = function(trackNumber) {
+    this.track = trackNumber;
+};
+
+// The NEW keyword is used to create a new "Playlist" instance
+var playing = new Playlist('Hatebreed', 'This Is Now');
+
+// Call the show() method in "Playlist" object
+playing.show();
+
+// Add the genre and track number
+playing.genre('Metal Core');
+playing.track('#09');
+
+// Render with console object
+console.log('Genre: ' + playing.genre);
+console.log('Track: ' + playing.track);
+
+
+// ADDING GETTER AND SETTER
+// ------------------------------------------------------
+
+function Playlist() {
+
+    var artist,
+        song;
+
+    this.__defineGetter__('artist', function() {
+        return artist;
+    });
+    this.__defineSetter__('artist', function(val) {
+        artist =  'By: ' + val;
+    });
+    this.__defineGetter__('song', function() {
+        return song;
+    });
+    this.__defineSetter__('song', function(val) {
+        song =  'Song: ' + val;
+    });
+
+}
+
+var playing = new Playlist();
+
+playing.artist = 'Hatebreed';
+playing.song   = 'This Is Now';
+
+console.log(playing.artist + ' | ' + playing.song);
+
+
+// OBJECT INHERITANCE
+// ------------------------------------------------------
+
+// PROTOTYPE
+function Task(title, time) {
+
+    this.title = title;
+    this.time = time;
+
+    this.render = function() {
+        return console.log('Task: ' + this.title + ' | Time: ' + this.time);
+    };
+
+}
+
+function Category(title, time, category) {
+
+    this.category = category;
+
+    this.show = function() {
+        return console.log('Added in category: ' + this.category);
+    };
+
+    Task.apply(this,arguments);
+
+    this.info = function() {
+        return console.log(this.render() + ' ' + this.show());
+    };
+
+}
+
+Category.prototype = new Task();
+
+var task = new Category('Test task', '25 minutes', 'Work');
+console.log(task.info());
+
+
+// CLASSICAL
+function Task(title, time) {
+    this.title = title;
+    this.time = time;
+}
+
+Task.prototype.render = function(title, time) {
+    this.title = title;
+    this.time = time;
+    return console.log('Task: ' + this.title + ' | Time: ' + this.time);
+};
+
+function SubTask() {
+    Task.call(this);
+}
+
+SubTask.prototype = Object.create(Task.prototype);
+SubTask.prototype.constructor = SubTask;
+
+var st = new SubTask();
+
+console.log(st instanceof SubTask);
+console.log(st instanceof Task);
+
+st.render('Reply E-mails', '25 minutes');
+
+
+// CHANING METHOD/CONSTRUCTOR
+// ------------------------------------------------------
+
+function Book(title, author) {
+
+    var title   = title,
+        author  = author;
+
+    this.getTitle = function() {
+        return 'Title: ' + title;
+    };
+
+    this.getAuthor = function() {
+        return 'Author: ' + author;
+    };
+
+}
+
+function TechBook(title, author, category) {
+
+    var category = category;
+
+    this.getCategory = function() {
+        return 'Category: ' + category;
+    };
+
+    Book.apply(this, arguments);
+
+    this.getBook = function() {
+        var arr = [this.getTitle(), this.getAuthor(), this.getCategory()].join('\n');
+        return arr;
+    };
+
+}
+
+TechBook.prototype = new Book();
+
+var book = new TechBook('JavaScript Functional', 'John Doe', 'JavaScript');
+
+console.log(book.getBook());
+
+var renderTitle    = book.getTitle(),
+    renderAuthor   = book.getAuthor(),
+    renderCategory = book.getCategory();
+
+console.log(renderTitle, renderAuthor, renderCategory);
+
+
+// ENUMERATE OBJECT'S PROPERTIES
+// ------------------------------------------------------
+
+function Tools(title, author) {
+    var title = title,
+        author = author;
+
+    this.getTitle = function() {
+        return 'Title: ' + title;
+    };
+
+    this.getAuthor = function() {
+        return 'Author: ' + author;
+    };
+}
+
+function DevTools(title, author, category) {
+    var category = category;
+
+    this.getCategory = function() {
+        return 'Category: ' + category;
+    };
+
+    Tools.apply(this, arguments);
+
+    this.getTool = function() {
+        return this.getTitle() + ' ' + this.getAuthor() + ' ' + this.getCategory();
+    };
+}
+
+DevTools.prototype = Object.create(Tools);
+
+var newTool = new DevTools('Grunt', 'Bem Alman', 'Automation'),
+    str     = '';
+
+for (var prop in newTool) {
+    if (newTool.hasOwnProperty(prop)) {
+        str = (Object.keys(newTool).join('\n'));
+    }
+}
+
+console.log(str);
+console.log(newTool.getTool());
+
+
+
+// PREVENT OBJECT EXTENSIBILITY
+// ------------------------------------------------------
+
+'use strict';
+
+var Test = {
+    val1: 'one',
+    val2: function() {
+        return this.val1;
+    }
+};
+
+try {
+    Object.preventExtensions(Test);
+} catch(e) {
+    console.log(e);
+}
+
+
+// SEAL THE OBJECT
+// ------------------------------------------------------
+
+'use strict';
+
+var JavaScript = {
+    prop1: 'I Love',
+    prop2: function() {
+        return this. prop1;
+    }
+};
+
+try {
+
+    // Seal the "JavaScript" object
+    Object.seal(JavaScript);
+
+    // property changed - will succeed
+    JavaScript.prop2 = 'javascript';
+
+    // new property - will fail
+    JavaScript.prop3 = '!!';
+
+    // instance
+    var str = [
+        JavaScript.prop1,
+        JavaScript.prop2,
+        JavaScript.prop3
+    ].join(' ');
+
+    // output
+    console.log(str);
+
+} catch (e) {
+    console.log(e);
+}
