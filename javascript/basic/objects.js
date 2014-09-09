@@ -512,3 +512,65 @@ try {
 } catch (e) {
     console.log(e);
 }
+
+
+// NAMESPACE
+// ------------------------------------------------------
+
+var APP = APP || {};
+
+APP.Modal = function() {
+    return console.log('Modal component was successfully initialized!');
+};
+
+APP.Accordion = function() {
+    return console.log('Accordion component was successfully initialized!');
+};
+
+APP.Navigation = function() {
+    return console.log('Navigation component was successfully initialized!');
+};
+
+APP.Modal();
+APP.Accordion();
+APP.Navigation();
+
+
+// METHOD CHAINING
+// ------------------------------------------------------
+
+function Book() {
+    var title  = title,
+        author = author;
+    this.getTitle = function(title) {
+        console.log('Title: ' + title);
+        return this;
+    };
+    this.getAuthor = function(author) {
+        console.log('Author: ' + author);
+        return this;
+    };
+    this.replaceTitle = function(newTitle) {
+        var oldTitle = title,
+            title = newTitle;
+        console.log('Title: ' + title);
+        return this;
+    };
+    this.replaceAuthor = function(newAuthor) {
+        var oldAuthor = author,
+            author = newAuthor;
+        console.log('Author: ' + author);
+        return this;
+    };
+}
+
+var book = new Book();
+console.log(book);
+
+book
+    .getTitle('JavaScript 1')
+    .getAuthor('John Doe 1');
+
+book
+    .replaceTitle('JavaScript 2')
+    .replaceAuthor('John Doe 2');
