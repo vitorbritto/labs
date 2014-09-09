@@ -147,6 +147,30 @@ mainFn(function(arg1,arg2) { console.log(arg1 + ' ' + arg2); }, 'Welcome,', 'Vit
 // GETTING INTO CLOSURES
 // ------------------------------------------------------
 
+var createTask = function(title, time) {
+
+    var title,
+        time;
+
+    return {
+        getTitle: function() {
+            return 'Task: ' + title;
+        },
+        getTime: function() {
+            if (time > 1) {
+                return 'Time: ' + time + ' minutos';
+            } else {
+                return 'Time: ' + time + ' minuto';
+            }
+        }
+    };
+};
+
+var task = createTask('Reply E-mails', 25);
+
+console.log(task.getTitle());
+console.log(task.getTime());
+
 
 // UNDERSTANDING THE CURRYING CONCEPT
 // ------------------------------------------------------
@@ -203,19 +227,8 @@ mainFn(function(arg1,arg2) { console.log(arg1 + ' ' + arg2); }, 'Welcome,', 'Vit
 // GENERAL GUIDE
 // ------------------------------------------------------
 
-
-// Apply
-function add(a, b) {
-    return a + b;
-}
-
-var arr = [6,2],
-    sum = add.apply(null, arr);
-
-
-console.log(sum);
-
-// Arguments
+// ARGUMENTS
+// ------------------------------------------------------
 var sum = function() {
     var sum = 0,
         i   = 0,
@@ -229,44 +242,6 @@ var sum = function() {
 };
 
 console.log(sum(1,2,3,4,5,5,6,7,8,9));
-
-
-// Chain Method
-var SomeClass = function() {
-
-    var _this = this;
-
-    this.one = function() {
-        console.log('method one!');
-        return _this;
-    },
-    this.two = function() {
-        console.log('method two!');
-        return _this;
-    },
-    this.three = function() {
-        console.log('method three!');
-        return _this;
-    },
-    this.four = function() {
-        console.log('method four!');
-        return _this;
-    },
-    this.five = function() {
-        console.log('method five!');
-        return _this;
-    };
-
-};
-
-var myclass = new SomeClass();
-
-myclass
-    .one()
-    .two()
-    .three()
-    .four()
-    .five();
 
 
 // CONSTRUCTORS
@@ -315,45 +290,6 @@ var person = new Person();
 person.info('Vitor Britto', 33, 'Brazil');
 person.info('Douglas Crockford', 73, 'USA');
 person.info('Brendan Eich', 53, 'USA');
-
-
-// Exception
-var add = function(a,b) {
-
-    var isNotNan = typeof a !== 'number' || typeof b !== 'number';
-
-    if (isNotNan) {
-        throw {
-            name: 'TypeError',
-            message: 'add needs a number'
-        };
-    }
-
-    return console.log(a + b);
-
-};
-
-add(5,5);
-
-// Function prototype
-Function.prototype.method = function(name, fn) {
-    this.prototype[name] = fn;
-    return this;
-};
-
-Number.method('round', function() {
-    return Math[this < 0 ? 'ceil' : 'floor'](this);
-});
-
-String.method('spaces', function() {
-    return this.replace(/\s/g,'');
-});
-
-var sum = 11.2 + 5;
-console.log(sum.round());
-
-var str = '   Some    string    here   ';
-console.log(str.spaces());
 
 
 // CONTEXT
@@ -417,7 +353,36 @@ obj.retrieve(4,6);
 // INVOCATION
 // ------------------------------------------------------
 
+// Invoke Function
+var add = function add(a, b) {
+    return a + b;
+};
+
+console.log(add(5,5));  // 5 + 5
+
+
 // Invoke Method
+var calc = {
+
+    a: function(a, b) { // ADD
+        return console.log(a + b);
+    },
+    s: function(a, b) { // SUBTRACTION
+        return console.log(a - b);
+    },
+    m: function(a, b) { // MULTIPLE
+        return console.log(a * b);
+    },
+    d: function(a, b) { // DIVIDE
+        return console.log(a / b);
+    }
+};
+
+calc.a(5,5);     // 5 + 5  => 10
+calc.s(10,8);    // 10 - 8 => 2
+calc.m(2,4);     // 2 * 4  => 8
+
+// Other Invoke Method
 var obj = {
     value: 1,
     increment: function(inc) {
@@ -431,37 +396,173 @@ console.log(obj.value); // => 2
 obj.increment(5);       // 2 + 5 = 7
 console.log(obj.value); // => 7
 
-
-// Invoke Function
-var add = function add(a, b) {
-    return a + b;
+// Constructor Invoke
+var Mood = function(status) {
+    this.status = status;
 };
 
-console.log(add(5,5));  // 5 + 5
+Mood.prototype.getStatus = function() {
+    return this.status;
+};
+
+var mood = new Mood('Happy!');
+console.log(mood.getStatus());
 
 
-// Other Invoke Function
-var calc = {
+// Invoke with Apply
+var add = function(num1, num2) {
+    return num1 + num2;
+};
+var arr = [4,8];
+console.log(add.apply(null, arr));
 
-    add: function(a, b) {
-        return console.log(a + b);
-    },
-    sub: function(a, b) {
-        return console.log(a - b);
-    },
-    mul: function(a, b) {
-        return console.log(a * b);
-    },
-    div: function(a, b) {
-        return console.log(a / b);
+
+// EXCEPTION
+// ------------------------------------------------------
+var add = function(a,b) {
+    try {
+        if (typeof a !== 'number' || typeof b !== 'number') {
+            throw {
+                name: 'TypeError',
+                message: 'Define a number'
+            };
+        }
+
+        return a + b;
+
+    } catch (e) {
+        console.log(e.name + ' : ' + e.message);
     }
 };
 
-
-calc.add(5,5);     // 5 + 5  => 10
-calc.sub(10,8);    // 10 - 8 => 2
-calc.mul(2,4);     // 2 * 4  => 8
+console.log(add(7,7));
 
 
+// EXTENDING OBJECTS
+// ------------------------------------------------------
+
+// Extend Object
+Function.prototype.method = function(name, func) {
+    this.prototype[name] = func;
+    return this;
+};
+
+// Object 'Number'
+Number.method('integer', function(){
+    return Math[this < 0 ? 'ceil' : 'floor'](this);
+});
+
+console.log((-10/3).integer());
+
+// Object 'String'
+String.method('trim', function() {
+    return this.replace(/^\s+|\s+$/g, '');
+});
+
+console.log('         Vitor Britto         '.trim());
 
 
+// MODULES
+// ------------------------------------------------------
+
+Function.prototype.method = function(name, func) {
+    this.prototype[name] = func;
+    return this;
+};
+
+String.method('deify', function() {
+    var entity = {
+        quot: '"',
+        lt: '<',
+        gt: '>'
+    };
+    return function() {
+        return this.replace(/&([ˆ&;]+);/g,
+            function(a,b) {
+                var r = entity[b];
+                return typeof r === 'string' ? r : a;
+            }
+        );
+    };
+})();
+
+console.log(('&lt;&quot;&gt;').deify());
+
+// CURRY
+// ------------------------------------------------------
+
+
+// CHANING METHOD
+// ------------------------------------------------------
+var SomeClass = function() {
+
+    var _this = this;
+
+    this.one = function() {
+        console.log('method one!');
+        return _this;
+    },
+    this.two = function() {
+        console.log('method two!');
+        return _this;
+    },
+    this.three = function() {
+        console.log('method three!');
+        return _this;
+    },
+    this.four = function() {
+        console.log('method four!');
+        return _this;
+    },
+    this.five = function() {
+        console.log('method five!');
+        return _this;
+    };
+
+};
+
+var myclass = new SomeClass();
+
+myclass
+    .one()
+    .two()
+    .three()
+    .four()
+    .five();
+
+
+// MEMOIZATION
+// ------------------------------------------------------
+
+
+
+// ------------------------------------------------------
+// COMMON PROBLEMS
+// ------------------------------------------------------
+
+// EXCCED PARAMS / ARGS
+// ------------------------------------------------------
+
+// Equal params and arguments
+function showMessage(name, age, place, work) {
+    return ['Nome: ' + name, 'Idade: ' + age + ' anos', 'Residência: ' + place, 'Profissão: ' + work].join('\n');
+}
+
+// Output will be fine
+console.log(showMessage('Vitor Britto', '33', 'Brazil', 'Full Stack Web Developer'));
+
+// If number of params excced the number of arguments on invocation:
+function showMessage(name, age, place, work) {
+    return ['Nome: ' + name, 'Idade: ' + age + ' anos', 'Residência: ' + place, 'Profissão: ' + work].join('\n');
+}
+
+// The aditional param will be set as 'udefined'
+console.log(showMessage('Vitor Britto', '33', 'Brazil'));
+
+// If arguments excced the param number on function
+function showMessage(name, age, place) {
+    return ['Nome: ' + name, 'Idade: ' + age + ' anos', 'Residência: ' + place, 'Profissão: ' + work].join('\n');
+}
+
+// ReferenceError is returned
+console.log(showMessage('Vitor Britto', '33', 'Brazil', 'Full Stack Web Developer'));
