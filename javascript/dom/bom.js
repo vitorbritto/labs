@@ -42,22 +42,25 @@ console.log($nav.platform);      // "MacIntel"
 console.log($nav.userAgent);     // "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:31.0) Gecko/20100101 Firefox/31.0"
 console.log($nav.vendor);        // ""
 
-
 // SCREEN
-var $scr = window.screen;
+var $scr    = window.screen,
+    $width  = isNaN(window.innerWidth) ? window.clientWidth : window.innerWidth,
+    $height = isNaN(window.innerHeight) ? window.clientHeight : window.innerHeight;
 
 // Properties
-console.log($scr.availTop);
-console.log($scr.availLeft);
 console.log($scr.availHeight);
 console.log($scr.availWidth);
-console.log($scr.colorDepth);
 console.log($scr.height);
+console.log($scr.width);
+console.log($width);
+console.log($height);
+console.log($scr.availTop);
+console.log($scr.availLeft);
 console.log($scr.left);
+console.log($scr.top);
+console.log($scr.colorDepth);
 console.log($scr.orientation);
 console.log($scr.pixelDepth);
-console.log($scr.top);
-console.log($scr.width);
 console.log($scr.mozEnabled);
 console.log($scr.mozBrightness);
 
