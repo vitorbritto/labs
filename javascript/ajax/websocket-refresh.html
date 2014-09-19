@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Experiment - Refresh Data on Page (using WEB SOCKETS)</title>
+</head>
+<body>
+
+    <!-- This is an experimental file. Inline scripts ARE NOT A GOOD PRATICE! Keep that in mind. -->
+    <script>
+
+        if('WebSocket' in window) {
+            var ws = new WebSocket('ws://example.com/service');
+
+            ws.onopen = function() {
+                ws.send('message to send');
+                console.log('message succesfully sent!');
+            };
+
+            ws.onmessage = function(evt) {
+                var msg = evt.data;
+                console.log(msg + 'succesfully sent!');
+            };
+
+            ws.onclose = function() {
+                console.log('WebSocket is now closed!');
+            }
+
+        } else {
+            console.log('This browser doesn\'t support WebSockets');
+        }
+
+    </script>
+</body>
+</html>

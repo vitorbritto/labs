@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Experiment - Refresh Data on Page</title>
+</head>
+<body>
+
+    <input type="submit" value="stop timer" onclick="stopTimer();">
+    <input type="submit" value="start timer" onclick="startTimer();">
+
+    <ul id="update"></ul>
+
+    <!-- This is an experimental file. Inline scripts ARE NOT A GOOD PRATICE! Keep that in mind. -->
+    <script>
+
+    var http = new XMLHttpRequest(),
+        file = 'updatefile.txt';
+
+    http.open('GET', file, true);
+    http.onreadystatechange = updateList;
+    http.send(null);
+
+    // response process
+    function updateList() {
+
+        if(http.readyState === 4 && http.status === 200) {
+
+            var li  = document.createElement('li'),
+                txt = document.createTextNode(http.responseText);
+
+            li.appendChild(txt);
+            document.getElementById('update').appendChild('li');
+
+        } else if (http.readyState === 4 && http.status !== 200) {
+            console.log('Something goes wrong: %s', http.responseText);
+        }
+
+    }
+
+    // timer
+    function startTimer() {
+        updateList();
+        var timer = setTimeout(timerEvent, 2000);
+    }
+
+    function timerEvent() {
+        if(http.readyState === 4) {
+            updateList();
+        }
+        var timer = setTimeout(timerEvent, 2000);
+    }
+
+    function stopTimer() {
+        clearTimeout(timer);
+    }
+
+    </script>
+</body>
+</html>

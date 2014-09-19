@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Cities</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <form id="categoryform">
+        Nordeste: <input type="radio" name="category" value="Nordeste"><br>
+        Sudeste: <input type="radio" name="category" value="Sudeste"><br>
+        Sul: <input type="radio" name="category" value="Sul"><br>
+    </form>
+
+    <div id="result"></div>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var xmlHttpObj;
+        window.onload=function() {
+            var radios = document.forms[0].elements['category'];
+            for (var i = 0; i < radios.length; i++) {
+                radios[i].onclick=getStories;
+            }
+        }
+
+        function getStories() { // category
+            var category = encodeURIComponent(this.value);
+
+            // ajax object
+            if (window.XMLHttpRequest) {
+                xmlHttpObj = new XMLHttpRequest();
+            }
+
+            // build request
+            var url = 'cities.php?category=' + category;
+            xmlHttpObj.open('GET', url, true);
+            xmlHttpObj.onreadystatechange = getData;
+            xmlHttpObj.send(null);
+        }
+
+        function getData() {
+            if (xmlHttpObj.readyState === 4 && xmlHttpObj.status === 200) {
+                try {
+                    var result = document.getElementById('result');
+                    var str = '<p>';
+                    var cities = xmlHttpObj.responseXML.getElementsByTagName('city');
+                    for (var i = 0; i < cities.length; i++) {
+                        var city = cities[i];
+                        str += city;
+                    }
+                    // finish HTML and insert
+                    str+='</p>';
+                    result.innerHTML=str;
+
+                } catch (e) {
+                    console.log(e.message);
+                }
+            }
+        }
+        //]]>
+    </script>
+
+</body>
+</html>

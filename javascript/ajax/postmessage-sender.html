@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>postMessage Experiment - Cross Window Communication</title>
+</head>
+<body>
+
+    <!-- This is an experimental file. Inline scripts/styles ARE NOT A GOOD PRATICES! Keep that in mind. -->
+
+    <button id="evaluate">Load Image</button>
+    <br><br>
+    <iframe
+        src="postmessage-listener.html"
+        id="widget"
+        style="border: 1px solid black; width: 960px; height: 280px;"
+    >
+    </iframe>
+
+    <script>
+
+        function crossEvent(selector, event, handler) {
+            if (selector.addEventListener) {
+                selector.addEventListener(event, handler, false);
+            } else if (selector.attachEvent) {
+                var event = 'on' + event;
+                selector.attachEvent(event, handler);
+            }
+        }
+
+        function sendMessage() {
+            try {
+                var $iframe = document.getElementById('widget').contentWindow;
+                $iframe.postMessage('post-experimente.jpg,Experimente Experimentar','http://www.vitorbritto.com.br/blog/assets/images/posts/');
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function recieveImage() {
+            if (e.origin === 'http://www.vitorbritto.com.br/blog/assets/images/posts/') {
+                console.log(e.data);
+            }
+        }
+
+        window.onload=function() {
+            var $btn = document.getElementById('evaluate');
+            crossEvent($btn, 'click', sendMessage);
+            crossEvent(window, 'message', recieveImage);
+        }
+
+    </script>
+</body>
+</html>

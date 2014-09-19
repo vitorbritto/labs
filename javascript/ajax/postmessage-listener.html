@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>postMessage Experiment - Cross Window Communication</title>
+</head>
+<body>
+
+    <!-- This is an experimental file. Inline scripts/styles ARE NOT A GOOD PRATICES! Keep that in mind. -->
+
+    <img src="" id="image" alt="" />
+
+    <script>
+
+        function crossEvent(selector, event, handler) {
+            if (selector.addEventListener) {
+                selector.addEventListener(event, handler, false);
+            } else if (selector.attachEvent) {
+                var event = 'on' + event;
+                selector.attachEvent(event, handler);
+            }
+        }
+
+        window.onload=function() {
+            crossEvent(window, 'message', receiveImage);
+        }
+
+        function receiveImage(e) {
+            var img = document.getElementById('image');
+
+            img.src = e.data.split(',')[0];
+            img.alt = e.data.split(',')[1];
+
+            e.source.postMessage('Received: ' + e.data, 'http://www.vitorbritto.com.br/blog/assets/images/posts/');
+        }
+
+    </script>
+</body>
+</html>
