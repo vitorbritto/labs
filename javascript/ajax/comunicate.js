@@ -90,13 +90,13 @@
 var crossHttp = function() {
     var http;
     if (window.XMLHttpRequest) {
-        http = new XMLHttpRequest();
+       return http = new XMLHttpRequest();
     } else if (window.ActiveXObject) {
-        http = new ActiveXObject('Microsoft.XMLHTTP');
+       return http = new ActiveXObject('Microsoft.XMLHTTP');
     }
 };
 
-console.log(crossHttp);
+console.log(crossHttp());
 
 // If you don't want to support Internet Explorer 8 and older,
 var http = new XMLHttpRequest();
