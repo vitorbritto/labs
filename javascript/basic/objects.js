@@ -120,6 +120,22 @@ console.log(test.baz());
 // GENERAL GUIDE
 // ------------------------------------------------------
 
+// Built-In Objects
+// ------------------------------------------------------
+
+console.log(Object);
+console.log(Function);
+console.log(Array);
+console.log(String);
+console.log(Boolean);
+console.log(Number);
+console.log(Math);
+console.log(Date);
+console.log(RegExp);
+console.log(Error);
+console.log(JSON);
+
+
 // Literal Objects
 // ------------------------------------------------------
 
