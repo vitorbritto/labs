@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% STRINGS                      %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% STRINGS
+%% ====================================================================
 
 % There are no strings in Erlang. Strings are really just lists of integers.
 % Strings are enclosed in double quotation marks (`"`).
