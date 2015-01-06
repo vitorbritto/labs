@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% LISTS COMPREHENSIONS       %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% LISTS COMPREHENSIONS
+%% ====================================================================
 
 % List comprehensions are expressions that create lists without having to use
 % funs, maps, or filters.
