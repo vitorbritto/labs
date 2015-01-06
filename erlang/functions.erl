@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% FUNCTIONS                  %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% FUNCTIONS
+%% ====================================================================
 
 % The function `area` consists of two clauses. The clauses are separated by a
 % semicolon, and the final clause is terminated by dot-whitespace.
