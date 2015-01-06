@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% GUARDS                     %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% GUARDS
+%% ====================================================================
 
 % Guards are constructs that we can use to increase the power of pattern
 % matching. Using guards, we can perform simple tests and comparisons on the
