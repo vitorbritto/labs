@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% CASE AND IF EXPRESSIONS      %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% CASE AND IF EXPRESSIONS
+%% ====================================================================
 
 % `case` expressions.
 % `filter` returns a list of all elements `X` in a list `L` for which `P(X)` is
