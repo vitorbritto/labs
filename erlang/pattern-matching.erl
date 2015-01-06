@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PATTERN MATCHING           %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% PATTERN MATCHING
+%% ====================================================================
 
 % In most languages, `=` denotes an assignment statement. In Erlang, however,
 % `=` denotes a pattern matching operation. `Lhs = Rhs` really means this:
