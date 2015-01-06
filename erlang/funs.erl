@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% FUNS                       %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% FUNS
+%% ====================================================================
 
 % Funs are "anonymous" functions. They are called this way because they have no
 % name. However they can be assigned to variables.
