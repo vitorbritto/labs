@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% MODULES                    %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% MODULES
+%% ====================================================================
 
 % Modules are the basic unit of code in Erlang. All the functions we write are
 % stored in modules. Modules are stored in files with `.erl` extensions.
