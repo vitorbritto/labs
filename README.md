@@ -11,10 +11,12 @@ Hi, my name is Vitor Britto and I'm a Full Stack Web Developer. This repository 
 - [JavaScript](javascript/)
 - [Ruby](ruby/)
 - [Shell Script](shell/)
-- [C/C++](c/)
+- [C](c/)
 - [Erlang](erlang/)
-- [Go](go/)
 - [Haskell](haskell/)
+- [Scala](scala/)
+- [Clojure](clojure/)
+- [OCalm](ocalm/)
 
 ## License
 
