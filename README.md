@@ -16,7 +16,7 @@ Hi, my name is Vitor Britto and I'm a Full Stack Web Developer. This repository 
 - [Haskell](haskell/)
 - [Scala](scala/)
 - [Clojure](clojure/)
-- [OCalm](ocalm/)
+- [OCaml](ocaml/)
 
 ## License
 
