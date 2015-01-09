@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% CONCURRENCY                %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
+%% CONCURRENCY
+%% ====================================================================
 
 % Erlang relies on the actor model for concurrency. All we need to write
 % concurrent programs in erlang are three primitives: spawning processes,
