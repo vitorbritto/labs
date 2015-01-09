@@ -379,6 +379,46 @@ console.log(st instanceof Task);
 st.render('Reply E-mails', '25 minutes');
 
 
+// LITERAL
+var myObject = {
+
+    fooMethod: function() {
+        console.log('Foo Returned!');
+        return this;
+    },
+    barMethod: function() {
+        console.log('Bar Returned!');
+        return this;
+    },
+    bazMethod: function() {
+        console.log('Baz Returned!');
+        return this;
+    }
+
+};
+
+// FUNCTIONAL
+var myObject = function() {
+
+    this.foo = function() {
+        console.log('Foo Returned!');
+        return this;
+    };
+    this.bar = function() {
+        console.log('Bar Returned!');
+        return this;
+    };
+    this.baz = function() {
+        console.log('Baz Returned!');
+        return this;
+    };
+
+};
+
+var obj = new myObject();
+
+
+
 // CHANING METHOD/CONSTRUCTOR
 // ------------------------------------------------------
 
