@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
 %% EXCEPTIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ====================================================================
 
 % Exceptions are raised by the system when internal errors are encountered or
 % explicitly in code by calling `throw(Exception)`, `exit(Exception)` or
