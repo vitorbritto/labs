@@ -10,6 +10,7 @@ Hi, my name is Vitor Britto and I'm a Full Stack Web Developer. This repository 
 - [CSS](css/) - _Experiments will be focused in CSS3 Animations._
 - [JavaScript](javascript/)
 - [Ruby](ruby/)
+- [PHP](php/)
 - [Shell Script](shell/)
 - [C](c/)
 - [Erlang](erlang/)
