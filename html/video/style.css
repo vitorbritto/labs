@@ -1,0 +1,31 @@
+#video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+.menu {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+}
+.btn-group {
+    display: table;
+    margin: 0 auto;
+}
+
+.btn {
+    -webkit-animation: 1s all ease;
+    -o-animation: 1s all ease;
+    animation: 1s all ease;
+}
+.btn:hover {
+    color: #333;
+    background: #e3e3e3;
+    border: 1px solid #ccc;
+}

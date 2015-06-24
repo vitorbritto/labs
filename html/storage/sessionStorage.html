@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Session storage</title>
+<script type="text/javascript">
+
+    var configStorage = function() {
+
+        var inputName    = document.getElementById('name'),
+            inputEmail   = document.getElementById('email'),
+            inputPhone   = document.getElementById('phone'),
+            formSubmit   = document.getElementById('store-data'),
+            currentName  = sessionStorage.getItem('name'),
+            currentEmail = sessionStorage.getItem('email'),
+            currentPhone = sessionStorage.getItem('phone');
+
+        function populateStorage() {
+            sessionStorage.setItem('name', inputName.value);
+            sessionStorage.setItem('email', inputEmail.value);
+            sessionStorage.setItem('phone', inputPhone.value);
+        }
+
+        function renderValues() {
+            var arr = [currentName, currentEmail, currentPhone].join('\n');
+            console.log(arr);
+        }
+
+        function initStorage() {
+            inputName.value  = currentName;
+            inputEmail.value = currentEmail;
+            inputPhone.value = currentPhone;
+            formSubmit.addEventListener('click', populateStorage, false);
+            renderValues();
+        }
+
+    };
+
+    document.addEventListener('DOMContentLoaded', initStorage, false);
+
+</script>
+</head>
+<body>
+<form name="form1">
+    <input type="text" name="name" id="name" placeholder="Enter text...">
+    <input type="text" name="email" id="email" placeholder="Enter text...">
+    <input type="text" name="phone" id="phone" placeholder="Enter text...">
+    <input type="button" id="store-data" value="Store Data">
+</form>
+</body>
+</html>

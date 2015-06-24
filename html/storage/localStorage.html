@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Local storage</title>
+<script type="text/javascript">
+function AssignValues()
+{
+localStorage.setItem("text1", document.form1.text1.value);
+localStorage.setItem("text2", document.form1.text2.value);
+localStorage.setItem("text3", document.form1.text3.value);
+}
+
+function Value1()
+{
+alert("Value 1 is " + localStorage.getItem("text1"));
+}
+
+function Value2()
+{
+alert("Value 2 is " + localStorage.getItem("text2"));
+}
+
+function Value3()
+{
+alert("Value 3 is " + localStorage.getItem("text3"));
+}
+
+function ShowLength()
+{
+alert("No of items in local storage is " + localStorage.length);
+}
+function ClearStorage()
+{
+localStorage.clear();
+alert("No of items in local storage is " + localStorage.length);
+}
+</script>
+</head>
+<body>
+<form name="form1">
+<input type="text" name="text1" placeholder="Enter text...">
+<br>
+<input type="text" name="text2" placeholder="Enter text...">
+<br>
+<input type="text" name="text3" placeholder="Enter text...">
+<br>
+<input type="button" value="Assign values" onClick="AssignValues()">
+<br>
+<input type="button" value="Show value 1" onClick="Value1()">
+<br>
+<input type="button" value="Show value 2" onClick="Value2()">
+<br>
+<input type="button" value="Show value 3" onClick="Value3()">
+<br>
+<input type="button" value="Show length" onClick="ShowLength()">
+<br>
+<input type="button" value="Clear storage" onClick="ClearStorage()">
+</form>
+</body>
+</html>
