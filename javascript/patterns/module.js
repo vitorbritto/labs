@@ -2,28 +2,30 @@
 
     'use strict';
 
-    var APP = (function() {
+    var myModule = (function() {
 
         var obj = {} || obj;
 
-        obj._foo = function(arg1, arg2) {
+        obj._privateFoo = function(arg1, arg2) {
             return console.log('Private Method');
         };
 
-        obj._bar = function(arg1, arg2) {
+        obj._privateBar = function(arg1, arg2) {
             return console.log('Private Method');
         };
 
-        obj.baz = function(arg1, arg2) {
+        obj.publicBaz = function(arg1, arg2) {
             return console.log('Public Method');
         };
 
         return {
-            init: obj.baz
+            init: obj.publicBaz
         };
 
     })();
 
-    window.APP = APP;
+    window.myModule = myModule;
 
 })(window, document);
+
+// myModule.init();
