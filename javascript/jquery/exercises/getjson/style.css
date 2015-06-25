@@ -1,0 +1,19 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.moveis {
+    width: 480px;
+    height: 100%;
+}
+.moveis-sections {
+    float: left;
+    padding: 10px;
+    background: #ccc;
+    height: 100%;
+    display: inline-block;
+}
+.moveis-item {
+    padding: 2px 5px;
+}
