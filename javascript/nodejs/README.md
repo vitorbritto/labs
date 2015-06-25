@@ -1,57 +1,45 @@
 # NodeJS
 
-## Globals
-
-- Console ✓
-- Modules ✓
-- Process
-- Globals ✓
-- Timers  ✓
+> ✓ = Done!
 
 
+## Modules
 
-## Core Modules
-
-### Básico
-
-- Path
-- Utilities
-- OS
-- Child Processes
-- File System
-- HTTP(S)
-- URL
-- Events
-
-
-### Avançado
-
+- Assertion Testing
 - Buffer
 - C/C++ Addons
+- Child Processes
 - Cluster
+- Console
 - Crypto
 - Debugger
 - DNS
 - Domain
-
-
-Net
-Punycode
-Query Strings
-Readline
-REPL
-Stream
-String Decoder
-
-TLS/SSL
-TTY
-UDP/Datagram
-URL
-VM
-ZLIB
-
-// Tests
-// Assertion Testing
+- Events
+- File System
+- Globals
+- HTTP
+- HTTPS
+- Modules
+- Net
+- OS
+- Path
+- Process
+- Punycode
+- Query Strings
+- Readline
+- REPL
+- Smalloc
+- Stream
+- String Decoder
+- Timers
+- TLS/SSL
+- TTY
+- UDP/Datagram
+- URL
+- Utilities
+- VM
+- ZLIB
 
 
 
