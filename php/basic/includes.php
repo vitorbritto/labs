@@ -1,6 +1,6 @@
 <?php
 
-/********************************
+/*
  * Includes
  */
 
@@ -20,8 +20,6 @@ require_once 'my-file.php';
 // file cannot be included.
 
 // Contents of my-include.php:
-<?php
-
 return 'Anything you like.';
 // End file
 

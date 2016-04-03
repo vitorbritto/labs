@@ -1,6 +1,6 @@
 <?php
 
-/********************************
+/*
  * Functions
  */
 
@@ -52,4 +52,3 @@ $function_name = 'add';
 echo $function_name(1, 2); // => 3
 // Useful for programatically determining which function to run.
 // Or, use call_user_func(callable $callback [, $parameter [, ... ]]);
-

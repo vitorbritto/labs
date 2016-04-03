@@ -1,8 +1,12 @@
 <?php
 
+/*
+ * Crypto
+ */
+
 // BASE 64
 // É um método para codificação de transferência na internet.
-// Funciona como uma mão dupla, utilizando os método
+// Funciona como uma mão dupla, utilizando os métodos
 // base64_encode() e base64_decode().
 function encpt1() {
 	$code = "O rato roeu a roupa do rei de Roma";
