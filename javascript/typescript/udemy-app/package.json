@@ -1,0 +1,18 @@
+{
+  "name": "udemy-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/faker": "^5.5.9",
+    "@types/google.maps": "^3.47.3",
+    "faker": "^5.5.3",
+    "typescript": "^4.5.5"
+  }
+}

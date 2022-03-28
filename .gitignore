@@ -1,0 +1,71 @@
+# firebase
+ios/GoogleService-Info.plist
+android/app/google-services.json
+
+# node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# mac
+.DS_Store
+
+# xcode
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+
+# buck
+buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
+
+# cocoapods
+ios/Pods/
+
+# android
+**/.gradle/
+.idea
+.gradle
+local.properties
+*.iml
+*.apk
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output/
+
+# fastlane
+fastlane/report.xml
+
+# others
+/coverage
+build
+dist
+*.swp
+.env
+.env.*
+.vscode/
+*.jsbundle
+
+# react-native-config codegen
+ios/tmp.xcconfig
+
+# IOS bundler
+ios/vendor/
+ios/.bundle/

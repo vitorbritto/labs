@@ -1,23 +1,23 @@
-![Labs Logo](logo-labs.jpg "Labs")
-
 ## Welcome
 
-Hi, my name is Vitor Britto and I'm a Full Stack Web Developer. This repository is a kind of lab of codes where I try to create more efficient algorithms but, likewise, I dump some crappy codes and Old-School Style too. Feel free to go on, inspect them and do whatever you want, but keep in mind that not all of these codes may work fine and follow the best practices that we know today in programming language.
+This repository is a kind of lab of codes where I try to create more efficient algorithms but, likewise, I dump some crappy codes and Old-School Style too. Feel free to go on, inspect them and do whatever you want, but keep in mind that not all of these codes may work fine and follow the best practices that we know today in programming language.
 
 ## Summary
 
-- [HTML](html/) - _Experiments will be focused in HTML5 APIs._
-- [CSS](css/) - _Experiments will be focused in CSS3 Animations._
-- [JavaScript](javascript/)
-- [Ruby](ruby/)
-- [PHP](php/)
-- [Unix / Shell](unixshell/)
-- [C](c/)
-- [Erlang](erlang/)
-- [Haskell](haskell/)
-- [Scala](scala/)
-- [Clojure](clojure/)
-- [Ojective Caml](ocaml/)
+- [c](c/)
+- [css](css/)
+- [erlang](erlang/)
+- [html](html/)
+- [java](java/)
+- [javascript](javascript/)
+- [k8s](k8s/)
+- [kafka](kafka/)
+- [php](php/)
+- [python](python/)
+- [react](react/)
+- [ruby](ruby/)
+- [sql](sql/)
+- [unix](unix/)
 
 ## License
 
